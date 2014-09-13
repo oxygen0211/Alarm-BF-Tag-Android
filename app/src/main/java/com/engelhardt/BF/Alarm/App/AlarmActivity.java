@@ -20,8 +20,6 @@ import java.lang.reflect.Array;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
-import julia_000.alarmclientandroid.R;
-
 public class AlarmActivity extends Activity {
     static final ConcurrentMap <String, String> groups = new ConcurrentHashMap <String, String> ();
 
