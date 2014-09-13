@@ -1,8 +1,8 @@
 package com.engelhardt.BF.Alarm.App;
 
 import android.app.Activity;
+import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.os.Environment;
 import android.view.Menu;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -10,13 +10,10 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
-import android.widget.ListAdapter;
-import android.widget.SimpleAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.lang.reflect.Array;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
@@ -33,8 +30,9 @@ public class AlarmActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_alarm_aktivity);
-        final PropertyManager propManager = new PropertyManager(getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS));
-        
+        SharedPreferences preferences = getSharedPreferences("AlarmBF", 0);
+        final PropertyManager propManager = new PropertyManager(preferences);
+
         final CheckBox delayCheck = (CheckBox) findViewById(R.id.delayCheck);
         final EditText delayField = (EditText) findViewById(R.id.delayField);
         final TextView minLabel = (TextView) findViewById(R.id.minuteLabel);
@@ -64,7 +62,6 @@ public class AlarmActivity extends Activity {
 					delayField.setVisibility(View.GONE);
 			        minLabel.setVisibility(View.GONE);
 				}
-				
 			}
 		});
         
@@ -102,5 +99,4 @@ public class AlarmActivity extends Activity {
         getMenuInflater().inflate(R.menu.activity_alarm_aktivity, menu);
         return true;
     }
-    
 }
