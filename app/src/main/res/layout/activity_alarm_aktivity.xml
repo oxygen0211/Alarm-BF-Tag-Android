@@ -1,18 +1,36 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:layout_gravity="center_vertical"
+    >
+
+    <EditText
+        android:id="@+id/ServerField"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/server"
+        android:padding="16dp"
+        android:layout_marginLeft="16dp"
+        />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/groupSpinner"
+        android:padding="16dp"
+        android:layout_marginLeft="16dp"
+        />
 
     <CheckBox
         android:id="@+id/delayCheck"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="34dp"
-        android:layout_marginTop="63dp"
-        android:text="Verzögerung"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:text="@string/delay"
+        android:padding="16dp"
+        android:layout_marginLeft="16dp"
+     />
 
     <EditText
         android:id="@+id/delayField"
@@ -20,56 +38,8 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="number"
-        android:layout_below="@+id/delayCheck"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="23dp" />
+        android:padding="16dp"
+        android:layout_marginLeft="16dp"
+        android:hint="@string/minutes"/>
 
-    <Button
-        android:id="@+id/fireAlarmButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Alarm Auslösen"
-        android:layout_centerVertical="true"
-        android:layout_alignLeft="@+id/ServerField"
-        android:layout_alignStart="@+id/ServerField" />
-
-    <TextView
-        android:id="@+id/minuteLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Min"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:layout_alignBottom="@+id/delayField"
-        android:layout_toRightOf="@+id/delayField" />
-
-    <TextView
-        android:id="@+id/serverLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Server"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:layout_below="@+id/minuteLabel"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="23dp" />
-
-    <EditText
-        android:id="@+id/ServerField"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:layout_below="@+id/serverLabel"
-        android:layout_alignLeft="@+id/serverLabel"
-        android:layout_alignStart="@+id/serverLabel">
-
-        <requestFocus />
-    </EditText>
-
-    <Spinner
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/groupSpinner"
-        android:layout_alignParentTop="true"
-        android:layout_alignLeft="@+id/delayField"
-        android:layout_alignStart="@+id/delayField" />
-
-</RelativeLayout>
+</LinearLayout>

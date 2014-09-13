@@ -1,8 +1,10 @@
 <resources>
 
     <string name="app_name">Alarm BF-Tag</string>
-    <string name="hello_world">Hello world!</string>
-    <string name="menu_settings">Settings</string>
+    <string name="delay">Verzögerung</string>
+    <string name="minutes">Min</string>
+    <string name="server">Server</string>
+    <string name="fire_alarm">Auslösen</string>
     <string name="title_activity_alarm_aktivity">AlarmAktivity</string>
 
 </resources>
